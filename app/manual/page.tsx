@@ -6,9 +6,11 @@ import { Callout, Container, Kbd, Pill } from "@/components/ui";
 import { SUPPORT_EMAIL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "MailtoChat user manual",
+  title: "User manual: send Apple Mail emails to Claude",
   description:
-    "Set up MailtoChat, route emails to the right Claude chat, and get the most from your prompts.",
+    "How to set up MailtoChat, route emails from Apple Mail to the right Claude chat or project, write your own prompts and shortcuts, and fix common problems.",
+  alternates: { canonical: "/manual/" },
+  openGraph: { url: "/manual/", title: "MailtoChat user manual" },
 };
 
 const toc: [string, string][] = [

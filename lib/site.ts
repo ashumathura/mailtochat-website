@@ -10,3 +10,9 @@ export const LEGAL =
 
 // Prefix for files in /public when the site is served from a sub-path (GitHub Pages project site).
 export const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+
+export const SITE_URL = "https://mailtochat.app";
+export const SITE_NAME = "MailtoChat";
+export const SITE_TITLE = "Mail to Claude for Mac | Send Apple Mail emails to Claude";
+export const SITE_DESCRIPTION =
+  "Mail to Claude in one shortcut. MailtoChat sends the selected Apple Mail email, attachments included, to the right chat or project in Claude Desktop with your prompt already running. Free during launch.";

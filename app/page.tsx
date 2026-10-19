@@ -2,7 +2,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Check, Cross, Icon, icons } from "@/components/icons";
 import { Container, Kbd, Pill, SectionHead } from "@/components/ui";
-import { DOWNLOAD_URL } from "@/lib/site";
+import { DOWNLOAD_URL, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
 type IconName = keyof typeof icons;
 
@@ -83,6 +83,8 @@ const requirements: [string, string, string][] = [
 ];
 
 const faqs: [string, string][] = [
+  ["What is MailtoChat?", "MailtoChat is a small Mac menu bar app that sends mail to Claude. Select an email in Apple Mail, press a shortcut, and the email and its attachments are pasted into the right chat or project in Claude Desktop, with your prompt added."],
+  ["How do I send an email from Apple Mail to Claude?", "Install MailtoChat, select an email in Apple Mail and press an action shortcut such as ⌥⌘R to draft a reply. MailtoChat opens the matching chat or project in Claude Desktop, pastes the email and its attachments, and runs your prompt."],
   ["Does MailtoChat send my emails to you?", "No. Your emails, attachments and prompts go from Apple Mail into Claude Desktop on your Mac and are never sent to us. The app only contacts a server to check for updates and your license, plus optional usage analytics that you choose to share."],
   ["Does it work with Outlook, Gmail or Claude on the web?", "Not yet. MailtoChat works with Apple Mail and the Claude desktop app only. If your Gmail or Outlook accounts are added to Apple Mail, they work."],
   ["What if no route matches an email?", "A window asks where it should go: an existing chat, a new chat in a project, a new chat, or an incognito chat. Save the choice as a new route, or use it just once. Prefer not to be asked? One setting always starts a new chat instead."],
@@ -122,9 +124,36 @@ function Bullets({ items }: { items: [string, string][] }) {
   );
 }
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${SITE_URL}/#app`,
+      name: SITE_NAME,
+      alternateName: "Mail to Claude",
+      description: SITE_DESCRIPTION,
+      url: `${SITE_URL}/`,
+      image: `${SITE_URL}/logo.png`,
+      applicationCategory: "ProductivityApplication",
+      operatingSystem: "macOS 13 or later (Apple Silicon)",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map(([q, a]) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      })),
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <div id="top">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SiteHeader current="home" />
 
       {/* HERO */}
@@ -139,7 +168,7 @@ export default function Home() {
               Stop copy-pasting emails into the wrong Claude chat.
             </h1>
             <p className="max-w-140 text-xl leading-relaxed text-sky">
-              Select an email in Apple Mail, press a shortcut, and MailtoChat sends it, attachments included, to the right chat or project in Claude Desktop with your prompt already running.
+              Mail to Claude in one shortcut. Select an email in Apple Mail, press a shortcut, and MailtoChat sends it, attachments included, to the right chat or project in Claude Desktop with your prompt already running.
             </p>
             <div className="flex flex-wrap items-center gap-3.5 pt-1">
               <a href={DOWNLOAD_URL} className="rounded-xl bg-white px-6.5 py-3.75 text-[17px] font-semibold text-brand no-underline hover:bg-sky hover:text-brand-dark">
@@ -273,7 +302,7 @@ export default function Home() {
       <section id="how" className="scroll-mt-4 bg-white">
         <Container className="flex flex-col gap-10 py-22">
           <SectionHead title="One shortcut. The right chat. The right action.">
-            MailtoChat lives in your menu bar and does the middle part for you.
+            MailtoChat lives in your menu bar and sends mail to Claude for you.
           </SectionHead>
           <div className="flex flex-wrap gap-5">
             {[
