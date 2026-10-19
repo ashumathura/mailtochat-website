@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Container } from "./ui";
 import { asset } from "@/lib/site";
 
-type Current = "home" | "manual";
+type Current = "home" | "manual" | "other";
 
 const link = "text-[15px] font-medium text-slate-700 no-underline hover:text-brand";
 

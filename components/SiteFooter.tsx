@@ -13,6 +13,9 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-wrap gap-5 text-[15px]">
           <Link href="/#faq" className="text-slate-700 no-underline hover:text-brand">FAQ</Link>
+          <Link href="/mail-to-claude/" className="text-slate-700 no-underline hover:text-brand">Mail to Claude guide</Link>
+          <Link href="/compare/copy-paste/" className="text-slate-700 no-underline hover:text-brand">vs copy-paste</Link>
+          <Link href="/compare/mailtoclaude/" className="text-slate-700 no-underline hover:text-brand">vs Mail to Claude</Link>
           <Link href="/manual" className="text-slate-700 no-underline hover:text-brand">User manual</Link>
           <Link href="/manual#privacy" className="text-slate-700 no-underline hover:text-brand">Privacy</Link>
           <span className="text-slate-600">Support: {SUPPORT_EMAIL}</span>
