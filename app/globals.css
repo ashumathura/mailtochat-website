@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-instrument), system-ui, sans-serif;
+  --font-display: var(--font-bricolage), var(--font-instrument), system-ui, sans-serif;
+
+  --color-brand: #0d47a1;
+  --color-brand-dark: #0a3680;
+  --color-sky: #e3f2fd;
+  --color-sky-200: #bbdefb;
+  --color-focus: #42a5f5;
+  --color-sun: #ffc107;
+  --color-sun-light: #ffd54f;
+  --color-sun-50: #fff8e1;
+  --color-sun-200: #ffe082;
+  --color-sun-ink: #1f1300;
+  --color-sun-deep: #b45309;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-sans text-slate-900 antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-bold tracking-tight;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+  summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  details[open] .faq-plus {
+    transform: rotate(45deg);
+  }
+}
