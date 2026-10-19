@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./ui";
-import { DOWNLOAD_URL } from "@/lib/site";
 
 type Current = "home" | "manual";
 
@@ -32,7 +31,7 @@ export function SiteHeader({ current = "home" }: { current?: Current }) {
             Manual
           </Link>
           <Link
-            href={onHome ? DOWNLOAD_URL : `/${DOWNLOAD_URL}`}
+            href={anchor("#download")}
             className="rounded-[10px] bg-brand px-4.5 py-2.5 text-[15px] font-semibold text-white no-underline hover:bg-brand-dark hover:text-white"
           >
             Get MailtoChat
