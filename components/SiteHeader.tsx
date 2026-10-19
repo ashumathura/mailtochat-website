@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./ui";
+import { asset } from "@/lib/site";
 
 type Current = "home" | "manual";
 
@@ -16,7 +17,7 @@ export function SiteHeader({ current = "home" }: { current?: Current }) {
           href="/"
           className="flex items-center gap-2 font-display text-3xl font-bold tracking-tight text-slate-900 no-underline"
         >
-          <Image src="/logo.png" alt="" width={72} height={72} priority className="block size-18" />
+          <Image src={asset("/logo.png")} alt="" width={72} height={72} priority className="block size-18" />
           <span>MailtoChat</span>
         </Link>
         <nav aria-label="Main" className="flex flex-wrap items-center gap-5.5">

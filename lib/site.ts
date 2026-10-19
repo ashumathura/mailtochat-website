@@ -7,3 +7,6 @@ export const DOWNLOAD_URL =
 
 export const LEGAL =
   "© 2026 MailtoChat. MailtoChat is an independent app and is not affiliated with or endorsed by Anthropic. Claude is a trademark of Anthropic, PBC. Apple and Mac are trademarks of Apple Inc.";
+
+// Prefix for files in /public when the site is served from a sub-path (GitHub Pages project site).
+export const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;

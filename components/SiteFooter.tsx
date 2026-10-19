@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./ui";
-import { LEGAL, SUPPORT_EMAIL } from "@/lib/site";
+import { LEGAL, SUPPORT_EMAIL, asset } from "@/lib/site";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-slate-200 bg-white">
       <Container className="flex flex-wrap items-center justify-between gap-5 py-8">
         <div className="flex items-center gap-2 font-display text-[26px] font-bold">
-          <Image src="/logo.png" alt="" width={64} height={64} className="block size-16" />
+          <Image src={asset("/logo.png")} alt="" width={64} height={64} className="block size-16" />
           <span>MailtoChat</span>
         </div>
         <div className="flex flex-wrap gap-5 text-[15px]">

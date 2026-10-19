@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Instrument_Sans } from "next/font/google";
+import { asset } from "@/lib/site";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   title: "MailtoChat: send Apple Mail emails to Claude Desktop",
   description:
     "Select an email in Apple Mail, press a shortcut, and MailtoChat sends it, attachments included, to the right chat or project in Claude Desktop with your prompt already running.",
-  icons: { icon: "/logo.png" },
+  icons: { icon: asset("/logo.png") },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
