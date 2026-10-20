@@ -97,7 +97,7 @@ export default function Manual() {
             <p className={lead}>MailtoChat is a small menu bar app. It reads the email you have selected in Apple Mail and pastes it into Claude Desktop, in the chat or project you choose.</p>
             <div className="flex flex-wrap gap-3.5">
               {[
-                ["Mac", "Apple Silicon, macOS 13 or later"],
+                ["Mac", "Apple Silicon, macOS 14 or later"],
                 ["Mail", "Apple Mail, with your accounts added"],
                 ["Claude", "Claude Desktop, on its Chat view"],
               ].map(([l, t]) => (

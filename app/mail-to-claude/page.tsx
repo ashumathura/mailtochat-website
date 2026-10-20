@@ -44,7 +44,7 @@ export default function Page() {
       >
         <Section title="What you need">
           <ul className={list}>
-            <li><strong>A Mac</strong> with Apple Silicon, running macOS 13 or later.</li>
+            <li><strong>A Mac</strong> with Apple Silicon, running macOS 14 or later.</li>
             <li><strong>Apple Mail</strong>, with the accounts you want to use added to it.</li>
             <li><strong>Claude Desktop</strong>, installed and kept on its Chat view.</li>
             <li><strong>MailtoChat</strong>, a small menu bar app that does the sending. It is free during launch.</li>

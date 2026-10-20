@@ -20,7 +20,7 @@ const NL = "Not listed on their site";
 const faqs: [string, string][] = [
   ["What is the difference between MailtoChat and Mail to Claude?", "Both send the selected Apple Mail email to Claude Desktop with a shortcut. MailtoChat adds six action slots with their own prompts and shortcuts, routes that send each sender or domain to a chosen chat or project, a route prompt, an activity log and an auto-send switch, and is free during launch."],
   ["Is MailtoChat affiliated with mailtoclaude.com?", "No. They are separate, independent products. This comparison uses the public information on their site, and we have tried to state only what it says."],
-  ["Which one supports older Macs?", "Mail to Claude lists macOS 12 (Monterey) or later. MailtoChat needs macOS 13 or later on a Mac with Apple Silicon."],
+  ["Which one supports older Macs?", "Mail to Claude lists macOS 12 (Monterey) or later. MailtoChat needs macOS 14 or later on a Mac with Apple Silicon."],
 ];
 
 export default function Page() {
@@ -48,7 +48,7 @@ export default function Page() {
               ["Activity log", "A searchable log on your Mac. Clear it or switch it off.", NL],
               ["Privacy", "Emails, attachments and prompts never go to us.", "States that data is processed locally and sent directly to Claude Desktop."],
               ["Mailboxes", "Unlimited, any account in Apple Mail.", "Any account in Apple Mail."],
-              ["Requirements", "macOS 13 or later, Apple Silicon.", "macOS 12 (Monterey) or later."],
+              ["Requirements", "macOS 14 or later, Apple Silicon.", "macOS 12 (Monterey) or later."],
             ]}
           />
           <p className="text-[14px] leading-normal text-slate-600">
@@ -68,7 +68,7 @@ export default function Page() {
 
         <Section title="Where Mail to Claude may suit you better">
           <ul className={list}>
-            <li><strong>You are on macOS 12.</strong> MailtoChat needs macOS 13 or later and Apple Silicon.</li>
+            <li><strong>You are on macOS 12 or 13.</strong> MailtoChat needs macOS 14 or later and Apple Silicon.</li>
             <li><strong>You want one shortcut and nothing else to configure.</strong> If you only ever paste the email and write your own prompt, a single shortcut may be all you need.</li>
           </ul>
         </Section>
