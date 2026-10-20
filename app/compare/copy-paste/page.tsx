@@ -40,7 +40,7 @@ export default function Page() {
               ["Finding the right chat", "Routes match the sender, recipient or domain and open the right chat or project.", "You search the sidebar every time, or start a new chat."],
               ["Your instruction", "Set once per action, plus an optional route prompt per route.", "Retyped for every email."],
               ["Email details", "From, To, Cc, date, subject and body are included.", "Only what you select and copy."],
-              ["Works with", "Apple Mail and Claude Desktop, on an Apple Silicon Mac with macOS 13 or later.", "Any mail client and any version of Claude, on any device."],
+              ["Works with", "Apple Mail and Claude Desktop, on an Apple Silicon Mac with macOS 14 or later.", "Any mail client and any version of Claude, on any device."],
               ["Setup", "Install a menu bar app and allow two macOS permissions.", "None."],
               ["Cost", "Free during launch.", "Free."],
             ]}

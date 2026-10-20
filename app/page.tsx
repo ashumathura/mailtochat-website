@@ -81,7 +81,7 @@ const trust: { icon: IconName; title: string; body: string }[] = [
 const requirements: [string, string, string][] = [
   ["Claude", "Claude Desktop, installed", "Keep it on its Chat view when you send an email, not the Code view."],
   ["Mail", "Apple Mail", "Any account you have added to Mail."],
-  ["Mac", "macOS 13 or later", "On a Mac with Apple Silicon."],
+  ["Mac", "macOS 14 or later", "On a Mac with Apple Silicon."],
   ["Permissions", "Two, when macOS asks", "Automation for Mail, to read the selected email. Accessibility, to paste into Claude."],
 ];
 
@@ -126,7 +126,7 @@ const jsonLd = {
       url: `${SITE_URL}/`,
       image: `${SITE_URL}/logo.png`,
       applicationCategory: "ProductivityApplication",
-      operatingSystem: "macOS 13 or later (Apple Silicon)",
+      operatingSystem: "macOS 14 or later (Apple Silicon)",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     },
     {
@@ -189,7 +189,7 @@ export default function Home() {
             <div className="max-w-140 rounded-lg border-l-4 border-sun bg-sun/15 px-4 py-3">
               <p className="text-base leading-normal text-white">
                 <strong className="text-sun-light">Works with Claude Desktop and Apple Mail only, for now.</strong>{" "}
-                Needs a Mac with Apple Silicon, macOS 13 or later.
+                Needs a Mac with Apple Silicon, macOS 14 or later.
               </p>
             </div>
           </div>
@@ -490,7 +490,7 @@ export default function Home() {
             Download MailtoChat for Mac
           </DownloadLink>
           <p className="text-[15px] leading-normal text-sky-200">
-            Free during launch. Signed and notarized by Apple. For Claude Desktop and Apple Mail on a Mac with Apple Silicon, macOS 13 or later.
+            Free during launch. Signed and notarized by Apple. For Claude Desktop and Apple Mail on a Mac with Apple Silicon, macOS 14 or later.
           </p>
         </Container>
       </section>
