@@ -158,24 +158,31 @@ export function ProjectPickerMock() {
   );
 }
 
-/** The window that opens when an email matches no route. */
+/** The window that opens when an email matches no route: three choices, each showing only the fields it needs. */
 export function NoRouteMock() {
+  const card = "flex flex-col gap-2 rounded-[12px] border p-3";
   return (
     <div className={`${mockCard} flex flex-col gap-3.5`}>
       <div className="flex flex-col gap-0.5">
         <p className="font-display text-xl font-bold">No route for this email yet</p>
-        <p className="text-sm leading-normal text-slate-600">There’s no Claude destination yet for mail received from maya@acme.com. Choose one and MailtoChat will remember it.</p>
+        <p className="text-sm leading-normal text-slate-600">From maya@acme.com · “Q3 renewal terms”</p>
       </div>
-      <div className="flex flex-col gap-2">
-        <Segmented options={["Sent to (To)", "Received from (From)"]} active={1} />
-        <div className={selectRow}><span className="text-slate-600">Domain</span><span className="font-semibold">acme.com</span></div>
+      <div className={`${card} border-brand bg-white`}>
+        <p className="text-sm font-semibold">◉ Send this one email</p>
+        <p className="text-sm leading-normal text-slate-600">Choose where it goes now. Nothing is saved.</p>
         <div className={selectRow}><span className="text-slate-600">Send it to</span><span className="font-semibold">New chat in project: Acme</span></div>
       </div>
-      <p className="text-sm leading-normal text-slate-700">☐ Don’t ask again. Always start a new chat when no route matches.</p>
+      <div className={`${card} border-slate-200 bg-white`}>
+        <p className="text-sm font-semibold">○ Send it, and remember for next time</p>
+        <p className="text-sm leading-normal text-slate-600">Adds a route, so the next email from this sender goes there by itself.</p>
+      </div>
+      <div className={`${card} border-slate-200 bg-white`}>
+        <p className="text-sm font-semibold">○ Always use a new chat, and stop asking</p>
+        <p className="text-sm leading-normal text-slate-600">Emails with no route open a new chat, and this window no longer appears.</p>
+      </div>
       <div className="flex justify-end gap-2">
         <span className={button}>Cancel</span>
-        <span className={button}>Just This Once</span>
-        <span className={buttonPrimary}>Save</span>
+        <span className={buttonPrimary}>Send</span>
       </div>
     </div>
   );

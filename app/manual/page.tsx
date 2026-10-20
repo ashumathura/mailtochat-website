@@ -202,16 +202,16 @@ export default function Manual() {
               <RoutesListMock />
             </Figure>
             <h3 className={h3}>When no route matches</h3>
-            <p className={p}>A window asks where the email should go. Choose a place, then pick one of three buttons:</p>
+            <p className={p}>A window opens with the sender and subject of the email and three choices. The first is selected, and each choice shows only the fields it needs:</p>
             <ul className={list}>
-              <li><strong>Save</strong> stores your choice as a new route.</li>
-              <li><strong>Just This Once</strong> uses it for this email only.</li>
-              <li><strong>Cancel</strong> sends nothing.</li>
+              <li><strong>Send this one email.</strong> Pick where it goes (a chat, a new chat in a project, a new chat or an incognito chat). Nothing is saved, and the button says <em>Send</em>.</li>
+              <li><strong>Send it, and remember for next time.</strong> The same choice, but it is saved as a route for the sender or their domain, so the next email goes there by itself. The button says <em>Send and save route</em>.</li>
+              <li><strong>Always use a new chat, and stop asking.</strong> Emails with no route open a new chat and this window no longer appears. It does not add a route. The button says <em>Send to a New Chat</em>.</li>
             </ul>
-            <p className={p}>If you would rather not be asked, untick <em>Ask where to send emails that have no route</em> in the settings, or tick <em>Don’t ask again</em> in the window. Unrouted emails then go to a new chat.</p>
+            <p className={p}><em>Cancel</em> sends nothing. To be asked again after choosing the third option, turn on <em>Ask where to send emails that have no route</em> in the settings.</p>
             <Figure
-              label="The No route for this email yet window, with the sender's domain filled in and the buttons Cancel, Just This Once and Save."
-              caption="The window that asks where an email should go."
+              label="The No route for this email yet window, with the sender and subject, and three choices: send this one email, send it and remember, or always use a new chat."
+              caption="The window that asks what to do with an email that has no route."
             >
               <NoRouteMock />
             </Figure>
