@@ -195,7 +195,7 @@ export function MenuPanelMock() {
       <div className="flex items-center gap-2.5 px-1">
         <span className="flex size-6.5 items-center justify-center rounded-md bg-brand text-xs font-bold text-white">M</span>
         <span className="font-display text-base font-bold">MailtoChat</span>
-        <span className="ml-auto text-xs text-slate-500">v0.1.11</span>
+        <span className="ml-auto text-xs text-slate-500">v1.0</span>
       </div>
       <div className="border-t border-slate-200" />
       <p className="px-2 text-xs font-semibold text-slate-500">Send to Claude</p>
