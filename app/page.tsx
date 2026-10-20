@@ -1,10 +1,11 @@
+import Image from "next/image";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Check, Cross, Icon, icons } from "@/components/icons";
 import { Container, Kbd, Pill, SectionHead } from "@/components/ui";
 import { DownloadLink } from "@/components/DownloadLink";
 import { AddRouteMock, mockCard } from "@/components/mockups";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL, asset } from "@/lib/site";
 
 type IconName = keyof typeof icons;
 
@@ -146,12 +147,26 @@ export default function Home() {
       <SiteHeader current="home" />
 
       {/* HERO */}
-      <section className="bg-brand text-white">
-        <Container className="flex flex-wrap items-center gap-14 pb-22 pt-20">
+      <section className="relative overflow-hidden bg-brand text-white">
+        {/* Menu bar panel, faded into the background on the right */}
+        <Image
+          src={asset("/hero-menu.png")}
+          alt=""
+          aria-hidden="true"
+          width={830}
+          height={666}
+          priority
+          className="pointer-events-none absolute right-[-110px] hidden lg:block top-71.25 h-auto w-195 max-w-none -translate-y-1/2 opacity-30"
+          style={{
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, #000 40%)",
+            maskImage: "linear-gradient(to right, transparent 0%, #000 40%)",
+          }}
+        />
+        <Container className="relative flex flex-wrap items-center gap-14 pb-22 pt-20">
           <div className="flex min-w-0 flex-[1_1_460px] flex-col gap-6">
             <div className="flex flex-wrap gap-2.5 self-start">
               <Pill>For Claude Desktop on Mac</Pill>
-              <Pill tone="green">Free during launch</Pill>
+              <Pill tone="green">Free</Pill>
             </div>
             <h1 className="text-[clamp(38px,5vw,62px)] leading-[1.05]">
               Stop copy-pasting emails into the wrong Claude chat.
@@ -167,8 +182,8 @@ export default function Home() {
                 See how it works
               </a>
             </div>
-            <p className="flex items-center gap-2 text-[15px] font-medium text-sky">
-              <Icon size={20} stroke={2}>{icons.shield}</Icon>
+            <p className="flex items-center gap-2 text-[15px] font-medium text-sky lg:gap-3 lg:text-lg lg:font-normal lg:leading-snug">
+              <Icon size={20} stroke={2} className="flex-none lg:size-6">{icons.shield}</Icon>
               Signed and notarized by Apple
             </p>
             <div className="max-w-140 rounded-lg border-l-4 border-sun bg-sun/15 px-4 py-3">
