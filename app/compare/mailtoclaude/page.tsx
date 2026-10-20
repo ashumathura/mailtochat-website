@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const NL = "Not listed on their site";
 
 const faqs: [string, string][] = [
-  ["What is the difference between MailtoChat and Mail to Claude?", "Both send the selected Apple Mail email to Claude Desktop with a shortcut. MailtoChat adds six action slots with their own prompts and shortcuts, routes that send each sender or domain to a chosen chat or project, standing instructions, an activity log and an auto-send switch, and is free during launch."],
+  ["What is the difference between MailtoChat and Mail to Claude?", "Both send the selected Apple Mail email to Claude Desktop with a shortcut. MailtoChat adds six action slots with their own prompts and shortcuts, routes that send each sender or domain to a chosen chat or project, a route prompt, an activity log and an auto-send switch, and is free during launch."],
   ["Is MailtoChat affiliated with mailtoclaude.com?", "No. They are separate, independent products. This comparison uses the public information on their site, and we have tried to state only what it says."],
   ["Which one supports older Macs?", "Mail to Claude lists macOS 12 (Monterey) or later. MailtoChat needs macOS 13 or later on a Mac with Apple Silicon."],
 ];
@@ -43,7 +43,7 @@ export default function Page() {
               ["Shortcuts and actions", "Six action slots, each with its own name and shortcut: Draft a Reply, Summary & Next Steps, Deep Dive & Research, two of your own, and Paste Only.", "One shortcut, by default Shift + Option + C."],
               ["Prompts", "A prompt per action, placed above the email. Two custom slots for your own.", NL],
               ["Send to the right chat", "Routes match the sender, recipient or a whole domain and open a chosen chat, a new chat in a project, a fresh chat or incognito.", NL],
-              ["Standing instructions", "A line per route, such as “Always reply formally, in Dutch”.", NL],
+              ["Route prompt", "A line per route, such as “Always reply formally, in Dutch”.", NL],
               ["Auto-send or review first", "Your choice. Paste Only never submits.", NL],
               ["Attachments", "Every attachment goes along. Images under 15 KB are skipped.", "Images, PDFs, Word, Excel, CSV, text files and zip archives."],
               ["Activity log", "A searchable log on your Mac. Clear it or switch it off.", NL],

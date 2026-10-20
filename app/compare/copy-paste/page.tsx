@@ -38,7 +38,7 @@ export default function Page() {
               ["Steps per email", "Select the email, press a shortcut.", "Select the text, copy, switch to Claude, find the chat, paste, add files, type your instruction."],
               ["Attachments", "Sent along with the email automatically.", "Added by hand, one at a time."],
               ["Finding the right chat", "Routes match the sender, recipient or domain and open the right chat or project.", "You search the sidebar every time, or start a new chat."],
-              ["Your instruction", "Set once per action, plus optional standing instructions per route.", "Retyped for every email."],
+              ["Your instruction", "Set once per action, plus an optional route prompt per route.", "Retyped for every email."],
               ["Email details", "From, To, Cc, date, subject and body are included.", "Only what you select and copy."],
               ["Works with", "Apple Mail and Claude Desktop, on an Apple Silicon Mac with macOS 13 or later.", "Any mail client and any version of Claude, on any device."],
               ["Setup", "Install a menu bar app and allow two macOS permissions.", "None."],

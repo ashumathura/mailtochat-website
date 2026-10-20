@@ -67,7 +67,7 @@ export default function Page() {
         </Section>
 
         <Section title="Get better replies: one chat per client">
-          <p className={body}>Claude remembers what is in a chat or project: your tone, decisions already made, files you shared. If every email starts a new chat, none of that exists. A <strong>route</strong> links a sender, a recipient or a whole domain to a specific chat or project, so each new email lands where the history already is. Add a standing instruction such as &ldquo;Always reply formally, in Dutch&rdquo; and it travels with every email on that route.</p>
+          <p className={body}>Claude remembers what is in a chat or project: your tone, decisions already made, files you shared. If every email starts a new chat, none of that exists. A <strong>route</strong> links a sender, a recipient or a whole domain to a specific chat or project, so each new email lands where the history already is. Add a route prompt such as &ldquo;Always reply formally, in Dutch&rdquo; and it travels with every email on that route.</p>
           <p className={body}>See <Link href="/manual#routes" className="font-semibold">how routes work</Link> in the manual.</p>
         </Section>
 

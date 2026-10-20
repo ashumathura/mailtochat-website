@@ -37,13 +37,13 @@ const routeFeatures: [string, string][] = [
   ["From or To.", "Route mail you receive by its sender, and mail you send by its recipient."],
   ["One address or a whole domain.", "A domain covers you and every colleague there, subdomains too."],
   ["Your choice of destination.", "An existing chat, a new chat in a project, a fresh chat, or incognito."],
-  ["Standing instructions.", "Add a line to a route, such as “Always reply formally, in Dutch”, and it travels with every email."],
+  ["Route prompt.", "Add a line to a route, such as “Always reply formally, in Dutch”, and it travels with every email."],
   ["Clear rules.", "A full address beats a domain, drag to reorder, and Test your routes shows which rule applies and why."],
 ];
 
 const promptFeatures: [string, string][] = [
   ["Anything Claude can do.", "Draft a reply, summarise, research, fill a spreadsheet, open a ticket from your template, run a skill."],
-  ["Prompt first, email below.", "Your prompt sits above the email, followed by the route’s standing instructions."],
+  ["Prompt first, email below.", "Your prompt sits above the email, followed by the route’s prompt."],
   ["Send now or review first.", "Turn auto-send on for instant results, or off to read the prompt before you press send."],
   ["The whole email comes along.", "From, To, Cc, date, subject, body and every attachment."],
 ];
@@ -58,7 +58,7 @@ const actions: [string, string][] = [
 ];
 
 const useCases: { title: string; body: string; label: string; text: string }[] = [
-  { title: "Answer one client in their own style", body: "Route the client’s domain to their project, add a standing instruction, and every reply uses what Claude already knows about them.", label: "Standing instruction", text: "“Always reply formally, in Dutch.” Then use Draft a Reply." },
+  { title: "Answer one client in their own style", body: "Route the client’s domain to their project, add a route prompt, and every reply uses what Claude already knows about them.", label: "Route prompt", text: "“Always reply formally, in Dutch.” Then use Draft a Reply." },
   { title: "Catch up on a long thread", body: "Turn a wall of replies into what matters and what you need to do next.", label: "Prompt", text: "“Summarise this email and list my next actions with owners and dates.”" },
   { title: "Research before you reply", body: "Get the background on a sender, a company or a topic before you commit to an answer.", label: "Prompt", text: "“Research the company and topic in this email and give me the context I need before replying.”" },
   { title: "Log an enquiry", body: "Send enquiries to a leads chat and have Claude pull out the fields for your spreadsheet.", label: "Custom action", text: "“Extract name, company, request and urgency and add them as a row in the leads spreadsheet.”" },
@@ -89,7 +89,7 @@ const faqs: [string, string][] = [
   ["Does it work with Outlook, Gmail or Claude on the web?", "Not yet. MailtoChat works with Apple Mail and the Claude desktop app only. If your Gmail or Outlook accounts are added to Apple Mail, they work."],
   ["What if no route matches an email?", "A window asks where it should go: an existing chat, a new chat in a project, a new chat, or an incognito chat. Save the choice as a new route, or use it just once. Prefer not to be asked? One setting always starts a new chat instead."],
   ["Does it send to Claude automatically?", "You decide. With auto-send on, actions that add a prompt are submitted right after pasting. With it off, you read it first and press send. Paste Only never submits."],
-  ["Why does Claude Desktop need to be on Chat?", "MailtoChat finds your chat or project in the Chat sidebar. If Claude Desktop is showing the Code view, it cannot find the chat and shows an error. Switch to Chat and send again."],
+  ["Why does Claude Desktop need to be on Chat?", "MailtoChat finds your chat or project in the Chat sidebar. If Claude Desktop is showing the Code view, it tells you so instead of finding the chat. Switch to Chat and send again."],
   ["Is MailtoChat safe to install?", "MailtoChat is signed with an Apple Developer ID and notarized by Apple, so macOS can verify who made it and that Apple has scanned it for malicious content before it opens. It is a small menu bar app, and your emails never go to us."],
   ["How much does it cost?", "MailtoChat is free during the launch period."],
 ];
@@ -345,7 +345,7 @@ export default function Home() {
             <div
               className="min-w-0 flex-[1_1_400px]"
               role="img"
-              aria-label="Illustration of the Add Route window: when an email is received from anyone at acme.com, put it in the Acme project, with the standing instruction Always reply formally, in Dutch."
+              aria-label="Illustration of the Add Route window: when an email is received from anyone at acme.com, put it in the Acme project, with the route prompt Always reply formally, in Dutch."
             >
               <div className={`${mockCard} flex flex-col gap-4`}>
                 <div className="flex flex-col gap-0.5">
@@ -360,7 +360,7 @@ export default function Home() {
                 </div>
                 <p className="text-sm font-semibold">...put it in Claude</p>
                 <div className={selectRow}><span className="text-slate-600">Send it to</span><span className="font-semibold">New chat in project: Acme</span></div>
-                <p className="text-sm font-semibold">Standing instructions (optional)</p>
+                <p className="text-sm font-semibold">Route prompt (optional)</p>
                 <div className="rounded-[9px] border border-slate-300 px-3 py-2.5 text-sm leading-normal">Always reply formally, in Dutch.</div>
                 <div className="rounded-[10px] bg-sky px-3.5 py-3 text-sm leading-normal text-brand-dark">
                   <strong>Result:</strong> Emails received from anyone at acme.com go to: New chat in project: Acme
