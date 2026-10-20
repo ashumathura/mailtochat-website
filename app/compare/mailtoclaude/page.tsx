@@ -68,7 +68,7 @@ export default function Page() {
 
         <Section title="Where Mail to Claude may suit you better">
           <ul className={list}>
-            <li><strong>You are on macOS 12.</strong> MailtoChat needs macOS 14 or later and Apple Silicon.</li>
+            <li><strong>You are on macOS 12 or 13.</strong> MailtoChat needs macOS 14 or later and Apple Silicon.</li>
             <li><strong>You want one shortcut and nothing else to configure.</strong> If you only ever paste the email and write your own prompt, a single shortcut may be all you need.</li>
           </ul>
         </Section>
