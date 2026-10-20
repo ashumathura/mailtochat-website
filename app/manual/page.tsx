@@ -208,6 +208,7 @@ export default function Manual() {
 
           <Section id="privacy" title="Privacy">
             <p className={lead}>MailtoChat never sends your emails, attachments or prompts to us. They travel from Apple Mail to Claude Desktop on your Mac. The only things that leave your Mac through MailtoChat are the weekly update and license check, plus optional analytics if you choose to share them. Once an email is in Claude, it is handled under Claude’s own terms, as if you had pasted it yourself.</p>
+            <p className={p}>This website, not the app, uses Google Analytics to count visits and downloads. It only runs after you accept in the banner, and you can change your choice any time with <em>Cookie settings</em> in the footer.</p>
           </Section>
 
           <Section id="trouble" title="Troubleshooting">

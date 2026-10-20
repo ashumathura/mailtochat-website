@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SiteHeader } from "./SiteHeader";
 import { SiteFooter } from "./SiteFooter";
 import { Container, Pill } from "./ui";
-import { DOWNLOAD_URL } from "@/lib/site";
+import { DownloadLink } from "./DownloadLink";
 
 export const h2 = "text-[clamp(26px,3vw,34px)] leading-[1.15]";
 export const body = "text-[17px] leading-[1.7] text-slate-700";
@@ -34,9 +34,9 @@ export function PageShell({
       <section className="bg-brand text-white">
         <Container narrow className="flex flex-col items-center gap-5 py-18 text-center">
           <h2 className="text-[clamp(28px,3.6vw,42px)] leading-[1.1]">Send your next email to Claude in one shortcut.</h2>
-          <a href={DOWNLOAD_URL} className="rounded-xl bg-white px-7 py-3.75 text-[17px] font-semibold text-brand no-underline hover:bg-sky hover:text-brand-dark">
+          <DownloadLink location="page_cta" className="rounded-xl bg-white px-7 py-3.75 text-[17px] font-semibold text-brand no-underline hover:bg-sky hover:text-brand-dark">
             Download MailtoChat for Mac
-          </a>
+          </DownloadLink>
           <p className="text-[15px] text-sky-200">
             Free during launch. Signed and notarized by Apple. For Claude Desktop and Apple Mail on a Mac with Apple Silicon, macOS 13 or later.{" "}
             <Link href="/manual" className="text-white underline underline-offset-4">Read the manual</Link>

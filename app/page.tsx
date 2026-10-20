@@ -2,7 +2,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Check, Cross, Icon, icons } from "@/components/icons";
 import { Container, Kbd, Pill, SectionHead } from "@/components/ui";
-import { DOWNLOAD_URL, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+import { DownloadLink } from "@/components/DownloadLink";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
 type IconName = keyof typeof icons;
 
@@ -172,9 +173,9 @@ export default function Home() {
               Mail to Claude in one shortcut. Select an email in Apple Mail, press a shortcut, and MailtoChat sends it, attachments included, to the right chat or project in Claude Desktop with your prompt already running.
             </p>
             <div className="flex flex-wrap items-center gap-3.5 pt-1">
-              <a href={DOWNLOAD_URL} className="rounded-xl bg-white px-6.5 py-3.75 text-[17px] font-semibold text-brand no-underline hover:bg-sky hover:text-brand-dark">
+              <DownloadLink location="home_hero" className="rounded-xl bg-white px-6.5 py-3.75 text-[17px] font-semibold text-brand no-underline hover:bg-sky hover:text-brand-dark">
                 Download for Mac
-              </a>
+              </DownloadLink>
               <a href="#how" className="px-2 py-3.75 text-[17px] font-semibold text-white underline underline-offset-4 hover:text-white">
                 See how it works
               </a>
@@ -501,9 +502,9 @@ export default function Home() {
           <p className="max-w-150 text-xl leading-relaxed text-sky">
             Set up your routes once and send your next email to the right chat in a single shortcut.
           </p>
-          <a href={DOWNLOAD_URL} className="rounded-xl bg-white px-7.5 py-4 text-lg font-semibold text-brand no-underline hover:bg-sky hover:text-brand-dark">
+          <DownloadLink location="home_final_cta" className="rounded-xl bg-white px-7.5 py-4 text-lg font-semibold text-brand no-underline hover:bg-sky hover:text-brand-dark">
             Download MailtoChat for Mac
-          </a>
+          </DownloadLink>
           <p className="text-[15px] leading-normal text-sky-200">
             Free during launch. Signed and notarized by Apple. For Claude Desktop and Apple Mail on a Mac with Apple Silicon, macOS 13 or later.
           </p>
