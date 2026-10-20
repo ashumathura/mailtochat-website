@@ -102,6 +102,8 @@ export default function Manual() {
                 </div>
               ))}
             </div>
+            <h3 className={h3}>Install it</h3>
+            <p className={p}>Download MailtoChat from the website and open it. The app is signed with an Apple Developer ID and notarized by Apple, so macOS can verify who made it and that Apple has scanned it for malicious content before it opens. Like any app downloaded from the internet, macOS may still ask you to confirm the first time. Choose <em>Open</em>.</p>
             <h3 className={h3}>Allow two permissions</h3>
             <p className={p}>macOS asks you to approve two things the first time you use the app. Without them MailtoChat cannot do its job.</p>
             <ul className={list}>

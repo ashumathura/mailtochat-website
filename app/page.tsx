@@ -90,6 +90,7 @@ const faqs: [string, string][] = [
   ["What if no route matches an email?", "A window asks where it should go: an existing chat, a new chat in a project, a new chat, or an incognito chat. Save the choice as a new route, or use it just once. Prefer not to be asked? One setting always starts a new chat instead."],
   ["Does it send to Claude automatically?", "You decide. With auto-send on, actions that add a prompt are submitted right after pasting. With it off, you read it first and press send. Paste Only never submits."],
   ["Why does Claude Desktop need to be on Chat?", "MailtoChat finds your chat or project in the Chat sidebar. If Claude Desktop is showing the Code view, it cannot find the chat and shows an error. Switch to Chat and send again."],
+  ["Is MailtoChat safe to install?", "MailtoChat is signed with an Apple Developer ID and notarized by Apple, so macOS can verify who made it and that Apple has scanned it for malicious content before it opens. It is a small menu bar app, and your emails never go to us."],
   ["How much does it cost?", "MailtoChat is free during the launch period."],
 ];
 
@@ -178,6 +179,10 @@ export default function Home() {
                 See how it works
               </a>
             </div>
+            <p className="flex items-center gap-2 text-[15px] font-medium text-sky">
+              <Icon size={20} stroke={2}>{icons.shield}</Icon>
+              Signed and notarized by Apple
+            </p>
             <div className="max-w-140 rounded-lg border-l-4 border-sun bg-sun/15 px-4 py-3">
               <p className="text-base leading-normal text-white">
                 <strong className="text-sun-light">Works with Claude Desktop and Apple Mail only, for now.</strong>{" "}
@@ -434,6 +439,17 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="flex flex-wrap items-center gap-5 rounded-2xl border-2 border-sun bg-sun-50 p-6">
+            <div className="flex size-12 flex-none items-center justify-center rounded-[14px] bg-sun text-sun-ink">
+              <Icon size={26} stroke={2}>{icons.shield}</Icon>
+            </div>
+            <div className="flex min-w-0 flex-[1_1_420px] flex-col gap-1">
+              <h3 className="text-xl leading-tight">Signed and notarized by Apple</h3>
+              <p className="text-base leading-snug text-slate-700">
+                MailtoChat is signed with an Apple Developer ID and notarized by Apple, so macOS can verify who made it and that Apple has scanned it for malicious content before it opens.
+              </p>
+            </div>
+          </div>
         </Container>
       </section>
 
@@ -489,7 +505,7 @@ export default function Home() {
             Download MailtoChat for Mac
           </a>
           <p className="text-[15px] leading-normal text-sky-200">
-            Free during launch. For Claude Desktop and Apple Mail on a Mac with Apple Silicon, macOS 13 or later.
+            Free during launch. Signed and notarized by Apple. For Claude Desktop and Apple Mail on a Mac with Apple Silicon, macOS 13 or later.
           </p>
         </Container>
       </section>

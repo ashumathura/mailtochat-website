@@ -38,7 +38,7 @@ export function PageShell({
             Download MailtoChat for Mac
           </a>
           <p className="text-[15px] text-sky-200">
-            Free during launch. For Claude Desktop and Apple Mail on a Mac with Apple Silicon, macOS 13 or later.{" "}
+            Free during launch. Signed and notarized by Apple. For Claude Desktop and Apple Mail on a Mac with Apple Silicon, macOS 13 or later.{" "}
             <Link href="/manual" className="text-white underline underline-offset-4">Read the manual</Link>
           </p>
         </Container>

@@ -53,7 +53,7 @@ export default function Page() {
 
         <Section title="Send an email to Claude in four steps">
           <ol className="flex list-decimal flex-col gap-3 pl-5.5 text-[17px] leading-relaxed text-slate-800">
-            <li><strong>Install MailtoChat</strong> and open it. It lives in your menu bar. When macOS asks, allow Automation for Mail and Accessibility, so it can read the selected email and paste into Claude.</li>
+            <li><strong>Install MailtoChat</strong> and open it. The app is signed and notarized by Apple, and it lives in your menu bar. When macOS asks, allow Automation for Mail and Accessibility, so it can read the selected email and paste into Claude.</li>
             <li><strong>Select an email</strong> in Apple Mail, from any of your mailboxes.</li>
             <li className="[&_kbd]:mx-0.5"><strong>Press a shortcut</strong> such as <Kbd>⌥⌘R</Kbd> to draft a reply, or choose an action from the menu bar icon.</li>
             <li><strong>Claude takes it from there.</strong> The email, its details and every attachment land in the chat or project you chose, and your prompt runs.</li>

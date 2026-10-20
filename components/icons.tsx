@@ -86,6 +86,12 @@ export const icons = {
   ),
   paperclip: <path d="m20 11-8 8a5 5 0 0 1-7-7l8-8a3.5 3.5 0 0 1 5 5l-8 8a2 2 0 0 1-3-3l7-7" />,
   arrowDown: <path d="M12 5v14M6 13l6 6 6-6" />,
+  shield: (
+    <>
+      <path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z" />
+      <path d="m9 12 2 2 4-4" />
+    </>
+  ),
 } as const;
 
 export function Check({ color = "currentColor" }: { color?: string }) {
