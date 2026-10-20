@@ -1,5 +1,3 @@
-// Placeholders: replace before launch.
-export const SUPPORT_EMAIL = "[SUPPORT EMAIL]";
 // Redirects to the newest published DMG in the private Supabase "releases" bucket.
 export const DOWNLOAD_URL =
   process.env.NEXT_PUBLIC_DOWNLOAD_URL ??

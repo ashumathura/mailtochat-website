@@ -2,6 +2,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Check, Cross, Icon, icons } from "@/components/icons";
 import { Container, Kbd, Pill, SectionHead } from "@/components/ui";
+import { AddRouteMock, mockCard } from "@/components/mockups";
 import { DOWNLOAD_URL, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
 type IconName = keyof typeof icons;
@@ -97,20 +98,6 @@ const faqs: [string, string][] = [
 const card = "flex min-w-0 flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-6";
 const iconTile = "flex size-11 items-center justify-center rounded-xl bg-sky text-brand";
 const eyebrow = "text-sm font-semibold uppercase tracking-[0.06em] text-brand";
-const mockCard = "rounded-[18px] border border-sky-200 bg-white p-5.5 shadow-[0_14px_34px_rgba(13,71,161,0.14)]";
-const selectRow = "flex justify-between gap-3 rounded-[9px] border border-slate-300 px-3 py-2.5 text-sm";
-
-function Segmented({ options, active }: { options: [string, string]; active: 0 | 1 }) {
-  return (
-    <div className="flex overflow-hidden rounded-[9px] border border-slate-300 text-sm font-medium">
-      {options.map((o, i) => (
-        <div key={o} className={`flex-1 px-2 py-2.25 text-center ${i === active ? "bg-brand text-white" : "text-slate-700"}`}>
-          {o}
-        </div>
-      ))}
-    </div>
-  );
-}
 
 function Bullets({ items }: { items: [string, string][] }) {
   return (
@@ -347,25 +334,7 @@ export default function Home() {
               role="img"
               aria-label="Illustration of the Add Route window: when an email is received from anyone at acme.com, put it in the Acme project, with the route prompt Always reply formally, in Dutch."
             >
-              <div className={`${mockCard} flex flex-col gap-4`}>
-                <div className="flex flex-col gap-0.5">
-                  <p className="font-display text-xl font-bold">Add Route</p>
-                  <p className="text-sm text-slate-600">Choose which emails this applies to, and where Claude should receive them.</p>
-                </div>
-                <p className="text-sm font-semibold">When an email is...</p>
-                <div className="flex flex-col gap-2">
-                  <Segmented options={["Sent to (To)", "Received from (From)"]} active={1} />
-                  <Segmented options={["Anyone at a domain", "One email address"]} active={0} />
-                  <div className={selectRow}><span className="text-slate-600">Domain</span><span className="font-semibold">acme.com</span></div>
-                </div>
-                <p className="text-sm font-semibold">...put it in Claude</p>
-                <div className={selectRow}><span className="text-slate-600">Send it to</span><span className="font-semibold">New chat in project: Acme</span></div>
-                <p className="text-sm font-semibold">Route prompt (optional)</p>
-                <div className="rounded-[9px] border border-slate-300 px-3 py-2.5 text-sm leading-normal">Always reply formally, in Dutch.</div>
-                <div className="rounded-[10px] bg-sky px-3.5 py-3 text-sm leading-normal text-brand-dark">
-                  <strong>Result:</strong> Emails received from anyone at acme.com go to: New chat in project: Acme
-                </div>
-              </div>
+              <AddRouteMock />
             </div>
           </div>
 

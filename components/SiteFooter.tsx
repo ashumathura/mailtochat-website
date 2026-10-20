@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./ui";
-import { LEGAL, SUPPORT_EMAIL, asset } from "@/lib/site";
+import { LEGAL, asset } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -18,7 +18,6 @@ export function SiteFooter() {
           <Link href="/compare/mailtoclaude/" className="text-slate-700 no-underline hover:text-brand">vs Mail to Claude</Link>
           <Link href="/manual" className="text-slate-700 no-underline hover:text-brand">User manual</Link>
           <Link href="/manual#privacy" className="text-slate-700 no-underline hover:text-brand">Privacy</Link>
-          <span className="text-slate-600">Support: {SUPPORT_EMAIL}</span>
         </div>
       </Container>
       <Container className="pb-8">

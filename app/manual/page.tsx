@@ -3,7 +3,9 @@ import type { ReactNode } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Callout, Container, Kbd, Pill } from "@/components/ui";
-import { SUPPORT_EMAIL } from "@/lib/site";
+import {
+  AddRouteMock, ChatPickerMock, Figure, MenuPanelMock, NoRouteMock, ProjectPickerMock, RoutesListMock, SeveralEmailsMock,
+} from "@/components/mockups";
 
 export const metadata: Metadata = {
   title: "User manual: send Apple Mail emails to Claude",
@@ -127,12 +129,24 @@ export default function Manual() {
               <li>MailtoChat finds the route that matches the email and opens the right chat in Claude Desktop.</li>
               <li>The email, its details and its attachments are pasted in. If the action has a prompt and auto-send is on, it is submitted.</li>
             </ol>
+            <Figure
+              label="The MailtoChat menu bar panel: a list of actions with their shortcuts, and buttons for updates, settings, support and quit."
+              caption="The panel that opens from the MailtoChat icon in the menu bar."
+            >
+              <MenuPanelMock />
+            </Figure>
             <Callout>
               <strong>Keep Claude Desktop on Chat.</strong> MailtoChat looks for your chat or project in the Chat sidebar. If Claude Desktop is showing the Code view (or Cowork), it says so and asks you to switch to Chat. Switch, then send the email again.
             </Callout>
             <Callout>
               <strong>One email at a time.</strong> If you select several emails in Mail, only the first one is sent. MailtoChat tells you how many you selected and shows the subject of the one that will go, so you can send it or cancel. You can turn this warning off in the General settings.
             </Callout>
+            <Figure
+              label="A dialog saying 3 emails are selected and only the first will be sent, with the buttons Send First Email and Cancel."
+              caption="The warning when several emails are selected."
+            >
+              <SeveralEmailsMock />
+            </Figure>
           </Section>
 
           <Section id="routes" title="Chat routes">
@@ -149,18 +163,44 @@ export default function Manual() {
               <li><strong>Route prompt (optional).</strong> Text added after the action’s prompt every time an email uses this route, so one action can behave differently per client or sender. For example: “Always reply formally, in Dutch.” Actions set to paste only do not use it.</li>
             </ul>
             <p className={p}>The Result line at the bottom of the window restates the route in plain words, so you can check it before saving. Open <em>Preview what Claude receives</em> to see the exact text Claude gets for a sample email, with your route prompt in place.</p>
+            <Figure
+              label="The Add Route window: when an email is received from anyone at acme.com, put it in a new chat in the Acme project, with the route prompt Always reply formally, in Dutch."
+              caption="The Add Route window."
+            >
+              <AddRouteMock />
+            </Figure>
             <h3 className={h3}>Choosing the chat or project</h3>
             <ul className={list}>
               <li><strong>Existing chat.</strong> Pick it from the list. The list comes from Claude Desktop’s sidebar, grouped by project, with your recent chats last. It leaves out Claude’s own entries such as New, Scheduled and Design. You can also paste a chat link, which is the most reliable way to find it.</li>
               <li><strong>New chat in a project.</strong> Pick the project from the dropdown of projects Claude shows in its sidebar. Choose <em>Other</em> to type the name of a project that is not listed. A project link is optional and the most reliable.</li>
               <li><strong>Refresh.</strong> Press <em>Refresh Chat List</em> (or <em>Refresh Project List</em>) after you add a chat or project in Claude. The line beside the button shows when the list was last updated and how many chats and projects were found.</li>
             </ul>
+            <div className="flex flex-wrap items-start gap-6">
+              <Figure
+                label="The chat picker open: chats grouped under their project, with recent chats last, and a Refresh Chat List button with the time it was updated."
+                caption="Picking an existing chat."
+              >
+                <ChatPickerMock />
+              </Figure>
+              <Figure
+                label="The project picker open: a list of projects and an Other option to type a name, with a Refresh Project List button."
+                caption="Picking a project."
+              >
+                <ProjectPickerMock />
+              </Figure>
+            </div>
             <h3 className={h3}>Which route wins</h3>
             <ul className={list}>
               <li>A full email address beats a domain.</li>
               <li>Between routes of the same kind, the one higher in the list wins. Drag routes to reorder them.</li>
               <li>Use <strong>Test your routes</strong> to type an address and see which route applies, and why.</li>
             </ul>
+            <Figure
+              label="The Routes tab: a list of four routes with their field, kind and destination, a Test your routes box and its result."
+              caption="The Routes tab, with the route tester."
+            >
+              <RoutesListMock />
+            </Figure>
             <h3 className={h3}>When no route matches</h3>
             <p className={p}>A window asks where the email should go. Choose a place, then pick one of three buttons:</p>
             <ul className={list}>
@@ -169,6 +209,12 @@ export default function Manual() {
               <li><strong>Cancel</strong> sends nothing.</li>
             </ul>
             <p className={p}>If you would rather not be asked, untick <em>Ask where to send emails that have no route</em> in the settings, or tick <em>Don’t ask again</em> in the window. Unrouted emails then go to a new chat.</p>
+            <Figure
+              label="The No route for this email yet window, with the sender's domain filled in and the buttons Cancel, Just This Once and Save."
+              caption="The window that asks where an email should go."
+            >
+              <NoRouteMock />
+            </Figure>
           </Section>
 
           <Section id="prompts" title="Prompts and shortcuts">
@@ -236,7 +282,7 @@ export default function Manual() {
             <p className={lead}>The About tab in the settings tells why MailtoChat was built, and has the ways to support it and get in touch.</p>
             <ul className={list}>
               <li><strong>Support the app.</strong> MailtoChat is free for now. If you like it, a donation helps keep it free and pays for maintaining and improving it. The link opens in your browser, and the app sends nothing to the payment service. It is also in the menu bar panel. The app asks once, after you have sent about twenty emails.</li>
-              <li><strong>Feedback and feature requests.</strong> Write to {SUPPORT_EMAIL}.</li>
+              <li><strong>Feedback, support and feature requests.</strong> The About tab in the app has the contact address. Write to it any time.</li>
             </ul>
           </Section>
 
@@ -249,7 +295,7 @@ export default function Manual() {
                 </div>
               ))}
             </div>
-            <p className={p}>Still stuck? Contact support at {SUPPORT_EMAIL}.</p>
+            <p className={p}>Still stuck? Open the About tab in the app for the contact address.</p>
           </Section>
         </main>
       </Container>

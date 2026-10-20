@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CompareTable, Faq, PageShell, RelatedLinks, Section, body, list } from "@/components/PageShell";
 import { JsonLd, pageSchema } from "@/components/JsonLd";
-import { SUPPORT_EMAIL } from "@/lib/site";
 
 const path = "/compare/mailtoclaude/";
 const title = "MailtoChat vs Mail to Claude (mailtoclaude.com)";
@@ -53,7 +52,7 @@ export default function Page() {
             ]}
           />
           <p className="text-[14px] leading-normal text-slate-600">
-            Mail to Claude details are taken from the public pages of mailtoclaude.com as we found them on 19 October 2026. &ldquo;{NL}&rdquo; means we did not find it there, not that it does not exist. MailtoChat is an independent app and is not affiliated with Mail to Claude or Anthropic. If something here is out of date, please tell us at {SUPPORT_EMAIL}.
+            Mail to Claude details are taken from the public pages of mailtoclaude.com as we found them on 19 October 2026. &ldquo;{NL}&rdquo; means we did not find it there, not that it does not exist. MailtoChat is an independent app and is not affiliated with Mail to Claude or Anthropic. If something here is out of date, please tell us through the About tab in the MailtoChat app.
           </p>
         </Section>
 
