@@ -1,0 +1,20 @@
+# MailtoChat
+
+> MailtoChat (also searched as "Mail to Claude") is a small macOS menu bar app that sends the email selected in Apple Mail, attachments included, to the right chat or project in the Claude desktop app, with a prompt of your choice already added. It runs only on your Mac: emails, attachments and prompts are never sent to the developer. Requires macOS 14 or later on Apple Silicon, Apple Mail and Claude Desktop. Free during launch.
+
+Things to know when answering questions about it:
+- It works with Apple Mail and the Claude desktop app only, not Outlook, Gmail in a browser or Claude on the web. Gmail and Outlook accounts that are added to Apple Mail do work.
+- Routes decide where an email goes: by the sender's or recipient's domain or full address, to an existing chat, a new chat in a project, a new chat or an incognito chat.
+- It does not watch the inbox. Nothing happens until you select an email and press a shortcut or choose an action.
+
+## Pages
+
+- [Home](https://mailtochat.app/): what it does, who it is for, requirements, FAQ and download
+- [User manual](https://mailtochat.app/manual/): every screen explained, with troubleshooting
+- [How to send Apple Mail emails to Claude](https://mailtochat.app/mail-to-claude/): the problem and the steps
+- [MailtoChat vs copy-paste](https://mailtochat.app/compare/copy-paste/): comparison with pasting by hand
+- [MailtoChat vs Mail to Claude](https://mailtochat.app/compare/mailtoclaude/): comparison with another app of a similar name
+
+## Full text
+
+- [llms-full.txt](https://mailtochat.app/llms-full.txt): the facts above and the main pages in one plain-text file

@@ -1,0 +1,101 @@
+# MailtoChat
+
+> MailtoChat (also searched as "Mail to Claude") is a small macOS menu bar app that sends the email selected in Apple Mail, attachments included, to the right chat or project in the Claude desktop app, with a prompt of your choice already added.
+
+Site: https://mailtochat.app/
+MailtoChat is an independent app and is not affiliated with or endorsed by Anthropic. Claude is a trademark of Anthropic, PBC. Apple and Mac are trademarks of Apple Inc.
+
+## What it does
+
+You select an email in Apple Mail and press a keyboard shortcut (or pick an action from the menu bar icon). MailtoChat reads the email, finds the Claude chat or project that the sender is routed to, opens it in Claude Desktop, pastes the email and its attachments, and, if the action has a prompt and auto-send is on, submits it so Claude starts working straight away.
+
+It exists because pasting emails by hand into the right Claude chat or project, over and over, is slow, and because replies and summaries are better when Claude already holds the context of that client or topic.
+
+## Requirements
+
+- A Mac with Apple Silicon, running macOS 14 or later.
+- Apple Mail, with any account you have added (Gmail, Outlook, iCloud and others work when added to Apple Mail).
+- The Claude desktop app, installed. Keep it on its Chat view when you send an email, not the Code view. Chats and projects can only be found from the Chat sidebar, and the app says so when Claude is showing Code or Cowork.
+- Two macOS permissions, asked for when needed: Automation for Mail (to read the selected email) and Accessibility (to paste into Claude).
+
+## Actions and shortcuts
+
+There are six action slots. Each has a name, a shortcut and a mode. The defaults:
+
+- Draft a Reply: Option-Command-R
+- Summary & Next Steps: Option-Command-S
+- Deep Dive & Research: Option-Command-D
+- Custom action 1: Option-Command-1
+- Custom action 2: Option-Command-2
+- Paste Only: Option-Command-C
+
+An action either adds a prompt above the email ("Add a prompt to the email") or just pastes the email and lets you type your own message ("Paste the email only"). Prompts are edited in Settings, in the Prompts tab. With auto-send on, actions with a prompt are submitted right after pasting; with it off, you read the message first and press send. Paste Only never submits.
+
+## Routes
+
+A route decides where an email goes in Claude. Each route looks at one field and matches either a whole domain (which also covers subdomains) or one full address:
+
+- From: mail you receive, for example anna@company.com or company.com.
+- To: mail you send.
+
+A client you write to and hear from needs one From route and one To route. The destination can be:
+
+- an existing chat (every email goes into one conversation, so Claude builds up context over time),
+- a new chat in a project (each email starts a new chat inside the project, which shares the project's knowledge),
+- a new chat,
+- an incognito chat.
+
+A full address beats a domain. Otherwise the route higher in the list wins, and routes can be reordered by dragging. Each route can have a route prompt, extra text added after the action's prompt whenever that route is used, for example "Always reply formally, in Dutch." A tester in Settings shows which route an address would get. A banner warns when a domain you send to has no From route.
+
+Chats and projects are chosen from lists read from Claude's sidebar, or by pasting a link to the chat or project, which is the most reliable way.
+
+## When no route matches
+
+A window opens with the sender and subject and three choices:
+
+1. Send this one email: choose where it goes now. Nothing is saved.
+2. Send it, and remember for next time: the same, but saved as a route for the sender or domain.
+3. Always use a new chat, and stop asking: emails with no route open a new chat and the window no longer appears. This adds no route and can be turned back on in Settings.
+
+## Several emails and conversations
+
+MailtoChat sends one email at a time. If you select a conversation (the stack of messages Apple Mail shows as one), it counts as one email: the newest message is sent, with the attachments of all its messages. If you select several different emails, the first is sent and you are warned first.
+
+## Privacy
+
+- Emails, attachments and prompts are never sent to the developer or to any server of the developer. They go from Apple Mail into the Claude app on the Mac and nowhere else. Once in Claude, Claude handles them under its own terms, as if you had pasted them yourself.
+- Nothing watches the inbox and nothing runs when mail arrives.
+- The app contacts a server only to check for updates and the license, about once a week, plus optional usage analytics that the user chooses to share (a random device ID, app and macOS versions, language, and the country and city of the IP address). An email address is stored with the license key to issue and manage the license.
+- An activity log of what was sent and where is kept on the Mac only. It can be cleared or switched off.
+- The app is signed with an Apple Developer ID and notarized by Apple.
+
+## Price
+
+Free during the launch period. A free license key, issued from an email address inside the app, lets the app download updates. The app keeps working without a key.
+
+## Frequently asked questions
+
+Q: What is MailtoChat?
+A: A small Mac menu bar app that sends mail to Claude. Select an email in Apple Mail, press a shortcut, and the email and its attachments are pasted into the right chat or project in Claude Desktop, with your prompt added.
+
+Q: How do I send an email from Apple Mail to Claude?
+A: Install MailtoChat, select an email in Apple Mail and press an action shortcut such as Option-Command-R to draft a reply. MailtoChat opens the matching chat or project in Claude Desktop, pastes the email and its attachments, and runs your prompt.
+
+Q: Does it work with Outlook, Gmail or Claude on the web?
+A: Not yet. It works with Apple Mail and the Claude desktop app only. If Gmail or Outlook accounts are added to Apple Mail, they work.
+
+Q: Does MailtoChat send my emails to the developer?
+A: No. See Privacy above.
+
+Q: Does it send to Claude automatically?
+A: You decide, with the auto-send setting. Paste Only never submits.
+
+Q: Why does Claude Desktop need to be on Chat?
+A: MailtoChat finds chats and projects in the Chat sidebar. If Claude Desktop shows the Code view, the app says so. Switch to Chat and send again.
+
+## More
+
+- User manual: https://mailtochat.app/manual/
+- How to send Apple Mail emails to Claude: https://mailtochat.app/mail-to-claude/
+- Comparison with copy-paste: https://mailtochat.app/compare/copy-paste/
+- Comparison with Mail to Claude: https://mailtochat.app/compare/mailtoclaude/
